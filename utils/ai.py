@@ -4,7 +4,6 @@ import pandas as pd
 import requests
 
 # Config
-NVIDIA_API_KEY  = ""
 NVIDIA_MODEL    = "mistralai/mistral-small-3.1-24b-instruct-2503"
 NVIDIA_BASE_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
 
