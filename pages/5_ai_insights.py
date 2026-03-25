@@ -338,15 +338,20 @@ if st.session_state.get("insight_history"):
     st.subheader(":material/history: Previous Insights")
 
     for i, item in enumerate(reversed(st.session_state.insight_history)):
-        idx = len(st.session_state.insight_history) - i
-        label = f"{item['type']} — #{idx}"
+        actual_index = len(st.session_state.insight_history) - 1 - i
+
+        label = f"{item['type']} — #{actual_index + 1}"
         if item.get("question"):
             label += f" · _{item['question'][:50]}_"
 
         with st.expander(label):
             st.markdown(item["response"])
 
-    if st.button("Clear History", icon=":material/delete:"):
+            if st.button("Remove", key=f"remove_insight_{actual_index}", icon=":material/delete:"):
+                st.session_state.insight_history.pop(actual_index)
+                st.rerun()
+
+    if st.button("Clear All History", icon=":material/delete_forever:"):
         st.session_state.insight_history = []
         st.rerun()
 else:
