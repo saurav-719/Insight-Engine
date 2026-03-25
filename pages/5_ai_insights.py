@@ -312,7 +312,7 @@ if st.button("Generate AI Insights", type="primary", icon=":material/rocket_laun
                     response_placeholder = st.empty()
                     full_response = ""
 
-                    for text in stream_insights(api_key="NVIDIA API KEY", prompt=prompt, max_tokens=length_map[response_length]):
+                    for text in stream_insights(api_key=st.secrets.get("NVIDIA API KEY",""), prompt=prompt, max_tokens=length_map[response_length]):
                         full_response += text
                         response_placeholder.markdown(full_response + "▌")
                     response_placeholder.markdown(full_response)
