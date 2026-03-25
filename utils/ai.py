@@ -4,8 +4,8 @@ import pandas as pd
 import requests
 
 # Config
-NVIDIA_MODEL    = "mistralai/mistral-small-3.1-24b-instruct-2503"
-NVIDIA_BASE_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
+NVIDIA_MODEL    = st.secrets.get("NVIDIA_MODEL","")
+NVIDIA_BASE_URL = st.secrets.get("NVIDIA_BASE_URL","")
 
 
 def build_dataset_summary(df):
