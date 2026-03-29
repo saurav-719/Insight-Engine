@@ -2,6 +2,7 @@ streamlit
 pandas
 numpy
 scipy
+matplotlib
 reportlab
 requests
 plotly==5.22.0
