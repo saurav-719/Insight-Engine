@@ -2,8 +2,12 @@ streamlit
 pandas
 numpy
 scipy
+openpyxl
 matplotlib
+scikit-learn
+statsmodels
 reportlab
 requests
 plotly==5.22.0
 kaleido==0.2.1
+
